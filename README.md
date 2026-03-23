@@ -17,7 +17,7 @@
 > For Discord web, see our [userstyle](https://userstyles.world/style/18964/rose-pine)
 
 1. Install a Discord client mod, such as [Vencord](https://vencord.dev/) or [BetterDiscord](https://betterdiscord.app/)
-2. Download your preferred variant
+2. Download your preferred variant ([releases](https://github.com/rose-pine/discord/releases))
 3. Navigate to Settings &rarr; Themes &rarr; Open Themes Folder and drop the downloaded file into the folder
 4. (Optional) For hovered windows controls use `--windows-hover:0` in the root config
 
