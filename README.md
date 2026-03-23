@@ -3,7 +3,7 @@
     <h2 align="center">Rosé Pine for Discord</h2>
 </p>
 
-<p align="center">All natural pine, faux fur and a bit of soho vibes for the classy minimalist</p>
+<p align="center">All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin</p>
 
 <p align="center">
     <a href="https://github.com/rose-pine/rose-pine-theme">
