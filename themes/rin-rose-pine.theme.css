@@ -1,7 +1,7 @@
 /**
 * @name Rin's Rosé Pine
 * @author Ardo
-* @version 4.5.0
+* @version 4.6.0
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
 * @source https://github.com/rose-pine/discord
 * @updateUrl https://github.com/rose-pine/discord/blob/rose-pine.theme.css
@@ -649,11 +649,11 @@ path.unreadPillCapStroke__908e2 {
     border-radius: 15px !important;
 }
 
-.searchBar__97492 {
+.searchBar__c322aa {
     border-color: transparent !important;
 }
 
-.icon__97492 {
+.icon__c322aa {
     padding-right: 10px;
 }
 
@@ -1848,7 +1848,6 @@ Credits:
 }
 
 
-
 /* transparency-blur.css */
 @property --panel-blur {
     syntax: 'on | off';
@@ -1918,7 +1917,6 @@ Credits:
     }
 }
 
-
 @container root style(--small-user-panel: on) {
     .visual-refresh {
         .base_c48ade {
@@ -1931,55 +1929,12 @@ Credits:
     }
 }
 
-
-
-/* More Animations */
-
-@keyframes slideInFromBottom {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/*
-===========================
-USER POPOUT CARD 
-===========================
-*/
-#popout_43 {
-    animation: slideInFromBottom 0.3s ease-out;
-    transform: translateY(0);
-    will-change: transform;
-}
-
 /*
 ===========================
 Server Member List
 ===========================
 */
 .container_c8ffbb {
-    animation: slideInFromRight 0.4s ease-out;
-    will-change: transform;
-    transform: translateX(0);
-    opacity: 1;
     border: 1px solid color-mix(in srgb, var(--gold), transparent 70%) !important;
 }
 
@@ -1988,82 +1943,69 @@ Server Member List
 Collapsible Search Bar 
 ===========================
 */
-.search__49676 {
-    width: 20px !important;
-    transition: width 0.3s ease-in-out !important;
+.searchBar_c322aa {
+    width: 32px !important;
+    transition: width 0.2s ease-in-out !important;
     margin-left: -10px !important;
     margin-bottom: 1px !important;
-    margin-right: 20px !important;
+    margin-right: 10px !important;
     border-radius: 100px !important;
+    border: 1px solid transparent !important;
 }
 
-.search__49676:hover,
-.search__49676:focus-within {
-    width: 220px !important;
+.searchBar_c322aa:hover,
+.searchBar_c322aa:focus-within {
+    width: 226px !important;
     right: unset !important;
     background-color: var(--base) !important;
+    border: 1px solid var(--input-border-default) !important;
+    margin-right: 8px !important;
 }
 
 /* Search text handling */
-.search__49676:not(:focus-within) .public-DraftEditorPlaceholder-inner,
-.search__49676:not(:focus-within) .searchFilter_bd8186,
-.search__49676:not(:focus-within) .searchAnswer_bd8186,
-.search__49676:not(:focus-within) .public-DraftStyleDefault-block {
+.searchBar_c322aa:not(:focus-within) .public-DraftEditorPlaceholder-inner,
+.searchBar_c322aa:not(:focus-within) .searchFilter_bd8186,
+.searchBar_c322aa:not(:focus-within) .searchAnswer_bd8186,
+.searchBar_c322aa:not(:focus-within) .public-DraftStyleDefault-block {
     opacity: 0 !important;
     transition: opacity 0.2s ease-in-out !important;
 }
 
-.search__49676:not(:focus-within):hover .searchFilter_bd8186,
-.search__49676:not(:focus-within):hover .searchAnswer_bd8186,
-.search__49676:not(:focus-within):hover .public-DraftStyleDefault-block {
+.searchBar_c322aa:not(:focus-within) .public-DraftEditorPlaceholder-inner,
+.searchBar_c322aa:not(:focus-within):hover .searchFilter_bd8186,
+.searchBar_c322aa:not(:focus-within):hover .searchAnswer_bd8186,
+.searchBar_c322aa:not(:focus-within):hover .public-DraftStyleDefault-block {
     opacity: 1 !important;
 }
 
-/* Search bar container */
-.searchBar__97492 {
-    position: sticky !important;
-    background-color: transparent !important;
-    border-radius: 100px;
+/* Search icon adjustments */
+.searchBar_c322aa:hover .icon_c322aa{
+    margin-right: 6px !important;
 }
 
-/* Main search icon */
-.icon__97492 {
-    position: absolute !important;
-    right: 0.1 !important;
-    top: 50% !important;
-    transform: translateY(-50%);
-    cursor: pointer !important;
-    padding: 6px 14px 6px 15px !important;
-    margin-right: -8px !important;
+.searchBar_c322aa:focus-within .icon_c322aa {
+    margin-right: 6px !important;
 }
 
-.icon__97492 svg {
-    width: 18px !important;
-    height: 19px !important;
+.searchBar_c322aa:not(:focus-within):not(:hover) .icon__0c4c4 {
+    opacity: 1 !important;
+    transform: rotate(0deg) !important;
 }
 
 /* Clear icon adjustments */
-.clear_fea832 {
+.clear__0c4c4 {
     right: 12px !important;
     bottom: 4px !important;
     bottom: 50% !important;
     z-index: 3 !important;
+}
+
+.searchBar_c322aa:not(:focus-within):not(:hover) .clear__0c4c4 {
     opacity: 0 !important;
-    transition: opacity 0.2s ease-in-out !important;
 }
 
-.search__49676:focus-within .clear_fea832 {
-    opacity: 1 !important;
-}
-
-.search__49676:not(:focus-within) .clear_fea832 {
-    display: none !important;
-}
-
-.search__49676:focus-within .DraftEditor-editorContainer {
-    width: 160px !important;
-    padding-right: 32px !important;
-    margin-left: 8px !important;
+.DraftEditor-editorContainer {
+    padding-left: 2px !important;
 }
 
 /* Placeholder text */
@@ -2071,12 +2013,4 @@ Collapsible Search Bar
     padding-top: 1px !important;
     padding-left: 30px !important;
     transition: opacity 0.2s ease-in-out !important;
-}
-
-.search__49676:not(:focus-within) .iconContainer_fea832>svg:last-child {
-    display: none !important;
-}
-
-.search__49676:not(:focus-within) .iconContainer_fea832>svg:first-child {
-    display: block !important;
 }
