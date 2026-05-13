@@ -66,8 +66,8 @@ CONFIGURATION 📝‼️
 .bar_c38106::before {
     content: "Rosé Pine";
     position: absolute;
-    top: 10px;
-    left: 16px;
+    top: 8px;
+    left: 62px;
     color: #ffffff77;
     font-size: 14px;
     font-weight: bold;
@@ -172,18 +172,16 @@ CONFIGURATION 📝‼️
 
 .wrapper_ef3116.guilds__5e434 {
     background-color: var(--overlay) !important;
-}
-.wrapper_ef3116.guilds__5e434 {
-    background-color: var(--overlay) !important;
-    margin-left: 12px !important;
+    margin-left: 10px !important;
     margin-right: 10px !important;
+    border-radius: 16px !important;
+    border: 2px solid color-mix(in srgb, var(--foam), transparent 70%) !important;
+    /* box-shadow: inset 0 0 0 1px var(--iris) !important; */
+    padding-left: 1px !important;
 }
-
 
 .itemsContainer_ef3116 {
     background-color: var(--overlay) !important;
-    border-radius: 16px !important;
-    border: 1px solid var(--iris) !important;
 }
 
 /* Main BG */
@@ -245,26 +243,25 @@ CONFIGURATION 📝‼️
 
 /* ---------------------------- Channel List ---------------------------- */
 
-.sidebarList_c48ade.sidebarListRounded_c48ade {
+.sidebarList__5e434.sidebarListRounded__5e434 {
+    border: 2px solid color-mix(in srgb, var(--love), transparent 70%) !important;
+    border-radius: 20px !important;
     background-color: var(--surface) !important;
-}
-.sidebarResizeHandle__5e434 {
-    background-color: var(--overlay) !important;
-}
-.scroller__629e4.thin_d125d2.scrollerBase_d125d2.fade_d125d2 {
-    scrollbar-width: none !important;
+    margin-right: 10px !important;
+    margin-bottom: 78px !important;
 }
 
 .container__2637a {
     margin-right: 0px !important;
 }
 
-.sidebarList__5e434.sidebarListRounded__5e434 {
-    border: 1px solid color-mix(in srgb, var(--love), transparent 70%) !important;
-    border-radius: 20px !important;
-    background-color: var(--surface) !important;
-    margin-right: 10px !important;
-    margin-bottom: 75px !important;
+.sidebarResizeHandle__5e434 {
+    background-color: var(--overlay) !important;
+}
+
+.scroller__629e4.thin_d125d2.scrollerBase_d125d2.fade_d125d2 {
+    scrollbar-width: none !important;
+    margin-bottom: 0px !important;
 }
 
 .content_d125d2 > *:not([aria-hidden="true"]) {
@@ -327,7 +324,7 @@ CONFIGURATION 📝‼️
 }
 .panels__5e434 {
     background-color: var(--surface) !important;
-    border: 1px solid color-mix(in srgb, var(--iris), transparent 70%) !important;
+    border: 2px solid color-mix(in srgb, var(--iris), transparent 70%) !important;
     border-radius: 20px !important;
 }
 .sidebar__5e434:after {
@@ -372,12 +369,24 @@ CONFIGURATION 📝‼️
     background-color: var(--highlightMed) !important;
 }
 
+
+
+/* ---------------------------- Direct Messages ---=----------------------- */
+
+
+.searchBar_e6b769,
+.channel__972a0.container_e45859:has([data-list-item-id*="nitro"]),
+.channel__972a0.container_e45859:has([data-list-item-id*="library"]) {
+    display: none !important;
+}
+
+
 /* ---------------------------- Main Chat Area ---------------------------- */
 
 .chatContent_f75fb0 {
     /* Main Chat area */
     background-color: var(--surface) !important;
-    border-color: color-mix(in srgb, var(--foam), transparent 70%) !important;
+    border-color: color-mix(in srgb, var(--pine), transparent 70%) !important;
 }
 .chat_f75fb0 {
     padding-bottom: 10px !important;
@@ -647,6 +656,7 @@ path.unreadPillCapStroke__908e2 {
     background-color: var(--surface) !important;
     /* add roundness */
     border-radius: 15px !important;
+    border: 2px solid var(--muted) !important;
 }
 
 .searchBar__c322aa {
@@ -900,7 +910,7 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
 
 .channelTextArea_f75fb0 {
     background-color: var(--overlay) !important;
-    border-color: var(--iris) !important;
+    border: 2px solid color-mix(in srgb, var(--foam), transparent 70%) !important;
     border-radius: 25px !important;
 }
 
@@ -990,11 +1000,14 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
     background-color: var(--surface) !important;
 }
 
-
-
 .closeButton_e876a8 {
     color: var(--love) !important;
 }
+
+.button__74017.button__24af7[aria-label*="gift"] {
+    display: none !important;
+}
+
 
 /* ---------------------------- Buttons ---------------------------------*/
 .button__201d5.lookBlank__201d5 {
@@ -1006,6 +1019,7 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
     color: var(--text) !important;
     background-color: var(--highlightLow) !important;
 }
+
 
 
 /* ---------------------------- Scrollbars ---------------------------- */
@@ -1047,7 +1061,7 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
 .tooltip__44b0c {
     background-color: var(--base) !important;
     color: var(--text) !important;
-    border: 1px solid var(--overlay) !important;
+    border: 2px solid var(--overlay) !important;
 }
 
 /* ---------------------------- Mentions ---------------------------- */
@@ -1055,7 +1069,6 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
 .mentioned__5345c:before {
     background-color: var(--rose) !important;
 }
-
 
 .mention {
     background-color: rgba(var(--rose), 0.1) !important;
@@ -1314,7 +1327,7 @@ Credits:
     /* server discovery */
         {
         border-radius: var(--radius-lg);
-        border: 1px solid var(--border-subtle);
+        border: 2px solid var(--border-subtle);
         backdrop-filter: var(--panel-backdrop-filter);
     }
 
@@ -1577,7 +1590,7 @@ Credits:
     /* vc container */
         {
         border-radius: var(--radius-lg) !important;
-        border: 1px solid var(--border-subtle);
+        border: 2px solid var(--border-subtle);
         overflow: hidden;
     }
 
@@ -1646,10 +1659,8 @@ Credits:
         background-color: var(--background-base-lower);
     }
 
-    .wrapper_cb9592
-
     /* dm vc wrapper */
-        {
+    .wrapper_cb9592 {
         background: none;
         margin-bottom: var(--gap);
     }
@@ -1667,18 +1678,15 @@ Credits:
     }
 
     /* remove excess backgrounds */
-    .wrapper_d852db
+    .wrapper_d852db,
 
     /* message loading placeholders */
-    ,
     .wrapper_d852db>.wrapper_fc8177 {
         background: none;
     }
 
-    .newMessagesBar__0f481
-
     /* unread messages bar */
-        {
+    .newMessagesBar__0f481 {
         top: 12px;
         left: 12px;
         right: 12px;
@@ -1686,34 +1694,27 @@ Credits:
         padding: 0 8px;
     }
 
-    .bottom__7aaec
-
     /* channel list new unreads pill */
-        {
+    .bottom__7aaec {
         bottom: 12px;
     }
 
-    .unreadMentionsIndicatorBottom_ef3116
-
     /* server list new pill */
-    ,
+    .unreadMentionsIndicatorBottom_ef3116,
     .unreadMentionsIndicatorTop_ef3116 {
         width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2);
         padding: calc(var(--custom-guild-list-padding) / 2);
     }
 
-    /* jank ass solution to only apply padding to treatment 3 */
-    .form_f75fb0
-
     /* chat bar outer form */
-        {
+    .form_f75fb0 {
+    /* jank ass solution to only apply padding to treatment 3 */
         --space-8: 16px;
     }
 
-    .channelBottomBarArea_f75fb0
 
     /* chat bar inner */
-        {
+    .channelBottomBarArea_f75fb0 {
         --space-8: 8px;
     }
 
@@ -1823,14 +1824,14 @@ Credits:
 
     /* profile inner */
         {
-        border-radius: calc(var(--radius-lg) - 4px);
+        border-radius: var(--radius-lg);
     }
 
     .outer_c0bea0
 
     /* profile outer */
         {
-        border: 1px solid var(--border-subtle);
+        border: 2px solid var(--border-subtle);
     }
 
     .root__24502 {
@@ -1935,7 +1936,7 @@ Server Member List
 ===========================
 */
 .container_c8ffbb {
-    border: 1px solid color-mix(in srgb, var(--gold), transparent 70%) !important;
+    border: 2px solid color-mix(in srgb, var(--gold), transparent 70%) !important;
 }
 
 /* 
