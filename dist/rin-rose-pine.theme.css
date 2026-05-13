@@ -98,8 +98,8 @@ CONFIGURATION 📝‼️
     border-bottom: 1px solid var(--overlay) !important;
 }
 
-/* Hides the Top Inbox etc buttons */
-.button__85643 {
+/* Hide the help button */
+.anchor_edefb8.anchorUnderlineOnHover_edefb8 {
     display: none !important;
 }
 
@@ -167,15 +167,16 @@ CONFIGURATION 📝‼️
 
 
 
-
 /* ---------------------------- Server List (Left Sidebar) ---------------------------- */
 
 .wrapper_ef3116.guilds__5e434 {
     background-color: var(--overlay) !important;
     margin-left: 10px !important;
     margin-right: 10px !important;
+    margin-bottom: 40px !important;
+    padding-bottom: 10px !important;
     border-radius: 16px !important;
-    border: 2px solid color-mix(in srgb, var(--foam), transparent 70%) !important;
+    border: 2px solid color-mix(in srgb, var(--gold), transparent 70%) !important;
     /* box-shadow: inset 0 0 0 1px var(--iris) !important; */
     padding-left: 1px !important;
 }
