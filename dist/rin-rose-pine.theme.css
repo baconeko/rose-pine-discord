@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author Ardo
-* @version 4.6.0
+* @version 4.7.0
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin.
 * @source https://github.com/rose-pine/discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/themes/rin-rose-pine.theme.css
@@ -99,7 +99,7 @@ CONFIGURATION 📝‼️
 }
 
 /* Hide the help button */
-.anchor_edefb8.anchorUnderlineOnHover_edefb8 {
+.anchor_edefb8.anchorUnderlineOnHover_edefb8[href="https://support.discord.com"] {
     display: none !important;
 }
 
