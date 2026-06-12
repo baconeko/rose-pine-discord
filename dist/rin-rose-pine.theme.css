@@ -374,10 +374,11 @@ CONFIGURATION 📝‼️
 
 /* ---------------------------- Direct Messages ---=----------------------- */
 
-
+/* Removes the nitro, library, and shop tabs from the sidebar */
 .searchBar_e6b769,
 .channel__972a0.container_e45859:has([data-list-item-id*="nitro"]),
-.channel__972a0.container_e45859:has([data-list-item-id*="library"]) {
+.channel__972a0.container_e45859:has([data-list-item-id*="library"]),
+.channel__972a0.container_e45859:has([data-list-item-id*="shop"]) {
     display: none !important;
 }
 
