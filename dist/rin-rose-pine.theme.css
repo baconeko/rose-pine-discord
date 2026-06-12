@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 4.7.1
+* @version 5.0
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -32,13 +32,64 @@ CONFIGURATION 📝‼️
     --highlightHigh: #524f67;
 }
 
+.theme-dark {
+    --primary-color: var(--love) !important;
+    --primary-color-dark: color-mix(in srgb, var(--primary-color), var(--overlay) 20%) !important;
+    --secondary-color: var(--foam) !important;
+    --tertiary-color: var(--iris) !important;
+    --tertiary-color-dark: color-mix(in srgb, var(--tertiary-color), var(--overlay) 20%) !important;
+    
+    --overlay-high: color-mix(in srgb, var(--overlay), var(--muted) 10%);
+    --overlay-higher: color-mix(in srgb, var(--overlay), var(--muted) 20%);
+    --overlay-highest: color-mix(in srgb, var(--overlay), var(--muted) 30%);
+
+    --radio-background-selected-default: var(--primary-color-dark) !important;
+    --radio-background-selected-hover: color-mix(in srgb, var(--primary-color-dark), var(--overlay) 20%) !important;
+    --switch-background-active: var(--primary-color-dark) !important;
+    --control-primary-background-default: var(--primary-color-dark) !important;
+    --control-primary-background-hover: color-mix(in srgb, var(--primary-color-dark), var(--overlay) 20%) !important;
+    --control-primary-background-active: color-mix(in srgb, var(--primary-color-dark), var(--overlay) 50%) !important;
+    --control-secondary-background-default: var(--overlay-high) !important;
+    --control-secondary-background-hover: var(--overlay-higher) !important;
+    --input-border-hover: var(--secondary-color) !important;
+    --input-border-focus: var(--secondary-color) !important;
+    --input-border-active: var(--secondary-color) !important;
+    --input-text-default: var(--text) !important;
+    --text-brand: var(--primary-color) !important;
+    --text-strong: var(--text) !important;
+    --text-default: var(--text) !important;
+    --text-muted: var(--subtle) !important;
+    --text-link: var(--primary-color) !important;
+    --primary-500: var(--overlay-highest) !important;
+    --brand-360: var(--primary-color) !important;
+    --bd-brand: var(--primary-color) !important;
+    --modal-footer-background: var(--overlay) !important;
+    --text-subtle: color-mix(in srgb, var(--text), var(--subtle) 50%) !important;
+    --checkbox-background-selected-default: var(--tertiary-color) !important;
+    --checkbox-background-selected-hover: color-mix(in srgb, var(--tertiary-color), var(--overlay) 30%) !important;
+    --checkbox-border-default: color-mix(in srgb, var(--tertiary-color), transparent 30%) !important;
+    --checkbox-border-hover: var(--tertiary-color) !important;
+    --background-surface-highest: var(--overlay-high) !important;
+    --background-surface-higher: var(--overlay) !important;
+    --background-surface-high: var(--overlay) !important;
+    --background-base-low: var(--overlay) !important;
+    --background-base-lower: var(--surface) !important;
+    --background-base-lowest: var(--surface) !important;
+    --background-mod-normal: var(--overlay-high) !important;
+    --background-mod-subtle: hsl(from var(--overlay-higher) h s l / 0.35) !important;
+    --slider-track-background: var(--overlay-highest) !important;
+    --background-brand: var(--primary-color-dark) !important;
+    --card-background-default: var(--overlay-high) !important;
+    --user-profile-overlay-background: var(--overlay-high) !important;
+}
+
 
 /* ---------------------------- Global Styles ---------------------------- */
 
 
 /* Main Background */
-.content_c48ade {
-    background-color: var(--overlay) !important;
+.content__5e434 {
+    background-color: var(--overlay);
 }
 
 /* Custom Logo Icon */
@@ -79,11 +130,85 @@ CONFIGURATION 📝‼️
 
 }
 
-.base__5e434,
-.content__5e434 {
-    background-color: var(--overlay);
+
+/* ---------------------------- Interactables ----------------------------------- */
+
+/* Switch Indicator */
+.switchIndicator_a28278:has(.thumb_a28278[style*="left: 24px"]) {
+    background-color: var(--primary-color-dark) !important;
 }
 
+.container_a28278:hover .switchIndicator_a28278:has(.thumb_a28278[style*="left: 24px"]) {
+    background-color: color-mix(in srgb, var(--primary-color-dark), var(--overlay) 20%) !important;
+}
+
+.bd-switch input:checked+.bd-switch-body,
+.bd-switch input:active+.bd-switch-body {
+    --switch-color: var(--primary-color-dark) !important;
+}
+
+/* Makes the Remove Avatar button in the Profiles page red */
+.removeButton_ffefd9 .button_a22cb0.sm_a22cb0.secondary_a22cb0.hasText_a22cb0,
+.removeButton__28d5e .button_a22cb0.sm_a22cb0.secondary_a22cb0.hasText_a22cb0 {
+    background-color: var(--control-critical-primary-background-default) !important;
+}
+
+.removeButton_ffefd9 .button_a22cb0.sm_a22cb0.secondary_a22cb0.hasText_a22cb0:hover,
+.removeButton__28d5e .button_a22cb0.sm_a22cb0.secondary_a22cb0.hasText_a22cb0:hover {
+    background-color: color-mix(in srgb, var(--control-critical-primary-background-default), var(--overlay) 20%) !important;
+}
+
+/* YABDP4Nitro button customizations in the Profiles page */
+#profileBannerUrlInput,
+#profilePictureUrlInput {
+    background-color: var(--input-background-default) !important;
+    border: 1px solid var(--input-border-default) !important;
+    border-radius: 5px !important;
+    color: var(--input-text-default) !important;
+    margin-top: 0px !important;
+}
+
+#profilePictureUrlInput {
+    max-width: 112px !important;
+}
+
+#profileBannerUrlInput {
+    height: auto !important;
+}
+
+.yabd-generic-button {
+    min-height: 32px !important;
+}
+
+.yabd-generic-button:hover {
+    background-color: color-mix(in srgb, var(--primary-color-dark), var(--overlay) 20%) !important;
+}
+
+#profilePictureButton.yabd-generic-button{
+    padding: 2px 15px !important;
+    margin-left: 4px !important;
+}
+
+#decorationButton.yabd-generic-button{
+    width: 139px !important;
+    padding: 2px 11px !important;
+    height: 48px !important;
+}
+
+.customizationSection_ace4f5 > .yabd-generic-button {
+    width: auto !important;
+    padding: 2px 11px !important;
+}
+
+#changeProfileEffectButton.yabd-generic-button {
+    width: 139px !important;
+    padding: 2px 11px !important;
+    height: 48px !important;
+}
+
+#profileBannerButton.yabd-generic-button {
+    width: 118px !important;
+}
 
 /* ---------------------------- System Bar (Windows) ---------------------------- */
 
@@ -95,7 +220,14 @@ CONFIGURATION 📝‼️
 /* TopBar */
 .bar_c38106 {
     background-color: var(--overlay) !important;
-    border-bottom: 1px solid var(--overlay) !important;
+}
+
+.bar_c38106.systemBar_c38106 {
+    background-color: color-mix(in srgb, var(--background-scrim) 72.157%, var(--overlay)) !important;
+}
+
+.bar_c38106.systemBar_c38106.fixed_c38106.show_c38106.disablePointerEvents_c38106 {
+    background-color: var(--overlay) !important;
 }
 
 /* Hide the help button */
@@ -111,7 +243,6 @@ CONFIGURATION 📝‼️
     margin: 0 4px;
     opacity: var(--windows-hover);
     cursor: default;
-
 }
 .trailing_c38106 {
     padding-right: 10px !important;
@@ -170,15 +301,13 @@ CONFIGURATION 📝‼️
 /* ---------------------------- Server List (Left Sidebar) ---------------------------- */
 
 .wrapper_ef3116.guilds__5e434 {
-    background-color: var(--overlay) !important;
     margin-left: 10px !important;
     margin-right: 10px !important;
-    margin-bottom: 40px !important;
-    padding-bottom: 10px !important;
+    margin-bottom: 78px !important;
     border-radius: 16px !important;
     border: 2px solid color-mix(in srgb, var(--gold), transparent 70%) !important;
-    /* box-shadow: inset 0 0 0 1px var(--iris) !important; */
     padding-left: 1px !important;
+    mask: none !important;
 }
 
 .itemsContainer_ef3116 {
@@ -240,6 +369,10 @@ CONFIGURATION 📝‼️
     /* Server list outter */
     background-color: transparent !important;
     border-color: var(--iris) !important;
+}
+
+.unreadMentionsFixedFooter_ef3116 {
+    box-shadow: none !important;
 }
 
 /* ---------------------------- Channel List ---------------------------- */
@@ -331,6 +464,7 @@ CONFIGURATION 📝‼️
 .sidebar__5e434:after {
     background-color: var(--overlay) !important;
 }
+
 /* New message text */
 .channelInfo_c69b6d {
     color: var(--foam) !important;
@@ -404,6 +538,7 @@ CONFIGURATION 📝‼️
     /* Channel title */
     color: var(--base) !important;
 }
+
 /* Remove the ugly gradient */
 .chatGradient__36d07.chatGradientBase__36d07,
 .chatGradient__36d07,
@@ -467,7 +602,7 @@ CONFIGURATION 📝‼️
 
 .newMessagesBar__0f481 {
     /* Unread messages bar */
-    background-color: var(--iris) !important;
+    background-color: var(--primary-color-dark) !important;
 }
 
 /* VC background */
@@ -507,6 +642,10 @@ CONFIGURATION 📝‼️
 /* New Messages */
 .isUnread__908e2 {
     border-color: var(--love) !important;
+}
+
+.isUnread__908e2 > .content__908e2 {
+    background-color: var(--love) !important;
 }
 
 .unreadPill__908e2.endCap__908e2 {
@@ -560,10 +699,6 @@ path.unreadPillCapStroke__908e2 {
 .container_d9be46.collapsed_d9be46 {
     background-color: var(--overlay) !important;
     border-radius: 25px !important;
-}
-
-.container__34c2c {
-    background-color: var(--overlay) !important;
 }
 
 .container__9293f {
@@ -622,12 +757,6 @@ path.unreadPillCapStroke__908e2 {
     color: var(--love) !important;
 }
 
-/* Jump to Present */
-.button__201d5.lookFilled__201d5.colorBrand__201d5.sizeSmall__201d5.grow__201d5 {
-    background-color: var(--love) !important;
-}
-
-
 
 /* Polls */
 .container__0be77 {
@@ -659,23 +788,44 @@ path.unreadPillCapStroke__908e2 {
     /* add roundness */
     border-radius: 15px !important;
     border: 2px solid var(--muted) !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
-.searchBar__c322aa {
-    border-color: transparent !important;
+.toolbar__9293f {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    min-width: fit-content !important;
+    padding-left: 0 !important;
 }
 
 .icon__c322aa {
     padding-right: 10px;
 }
 
-/* Centering Title */
 .children__9293f {
-    display: flex;
-    justify-content: center;
-    /* Centers horizontally */
-    align-items: center;
-    /* Centers vertically */
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+.children__9293f > :first-child {
+    margin-left: auto !important;
+}
+
+.children__9293f > .titleWrapper__9293f:last-of-type,
+.children__9293f:has(.topic__6ec1a) > .titleWrapper__9293f {
+    margin-right: auto !important;
+}
+
+.children__9293f::after {
+    display: none !important;
 }
 
 /* Removing Channel Descp from topbar */
@@ -725,10 +875,6 @@ path.unreadPillCapStroke__908e2 {
 .container_a45028 {
     background-color: transparent !important;
 }
-.button_a22cb0.sm_a22cb0.primary_a22cb0.hasText_a22cb0 {
-    background-color: var(--foam) !important;
-    color: var(--base) !important;
-}
 .closeIcon_d9c882 {
     color: var(--love) !important;
 }
@@ -737,44 +883,53 @@ path.unreadPillCapStroke__908e2 {
 }
 
 
-
 /* Search Results */
-.searchHeader_f3b986,
-.scroller_a9e706 {
+.searchResultsWrap_a98f3b {
     background-color: var(--surface) !important;
-    border-color: var(--iris) !important;
+    border: 2px solid color-mix(in srgb, var(--iris), transparent 70%) !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    margin-left: 10px !important;
 }
 
-.container__02a39 {
-    border-color: var(--iris) !important;
+.searchHeader_ae7890 {
+    background-color: var(--surface) !important;
 }
 
-.searchResult__02a39 {
+.scroller_a98f3b {
+    background-color: var(--surface) !important;
+}
+
+.searchResult__80bf8 {
     background-color: var(--overlay) !important;
 }
 
-.item_b3f026.selected_b3f026 {
-    background-color: var(--base) !important;
+.container__80bf8:hover .searchResult__80bf8 {
+    background-color: var(--highlightMed) !important;
 }
 
-.children__9293f::after {
-    display: none !important;
-}
-
-/* Channels and Rules and Roles */
-.header__0b563.container__9293f.themed__9293f {
+.searchResultGroup_a7e67f {
     background-color: var(--surface) !important;
-    border-radius: 25px !important;
+    border-radius: 8px !important;
 }
 
-.returnButton__0b563.button__201d5.lookOutlined__201d5.colorPrimary__201d5.sizeSmall__201d5.grow__201d5 {
-    border-color: transparent !important;
+.channelNameText_a7e67f {
+    color: var(--text) !important;
 }
 
-.returnButton__0b563.button__201d5.lookOutlined__201d5.colorPrimary__201d5.sizeSmall__201d5.grow__201d5:hover {
-    background-color: var(--iris) !important;
+.searchFilter_bd8186.searchToken_bd8186 {
+    background-color: var(--highlightMed) !important;
+    border-radius: 6px 0 0 6px !important;
+    color: var(--text) !important;
+    padding: 1px 2px 1px 4px !important;
 }
 
+.searchAnswer_bd8186.searchToken_bd8186 {
+    background-color: var(--highlightMed) !important;
+    border-radius: 0 6px 6px 0 !important;
+    color: var(--foam) !important;
+    padding: 1px 4px 1px 2px !important;
+}
 
 /* ---------------------------- User Area (Bottom Left) ---------------------------- */
 
@@ -830,10 +985,6 @@ rect[mask="url(#svg-mask-status-idle)"] {
     background-color: var(--surface) !important;
 }
 
-.button_e131a9 {
-    background-color: var(--overlay) !important;
-}
-
 
 /* Screen Share */
 .panel__5dec7.activityPanel_c48ade {
@@ -861,6 +1012,10 @@ button[aria-label="Deafen"] .lottieIcon__5eb9b svg path {
 }
 
 button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
+    fill: var(--iris) !important;
+}
+
+button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
     fill: var(--iris) !important;
 }
 
@@ -894,10 +1049,6 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
     font-weight: 700;
 }
 
-.outer_c0bea0 {
-    background-color: color-mix(in srgb, var(--foam), transparent 30%) !important;
-}
-
 .panel__5dec7.activityPanel__5e434 {
     background-color: var(--surface) !important;
     border-radius: 20px !important;
@@ -915,10 +1066,6 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
     border: 2px solid color-mix(in srgb, var(--foam), transparent 70%) !important;
     border-radius: 25px !important;
 }
-
-/* .scrollableContainer__74017 {
-    background-color: var(--overlay) !important;
-} */
 
 .inner__74017 {
     background-color: transparent !important;
@@ -1051,11 +1198,17 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
 .unread__2ea32 {
     background-color: var(--foam) !important;
 }
+
 .barButtonMain__0f481 {
-    color: var(--highlightLow) !important;
+    color: var(--text) !important;
 }
+
 .barButtonAlt__0f481 {
-    color: var(--highlightMed) !important;
+    color: var(--text) !important;
+}
+
+.barButtonAlt__0f481:hover {
+    background-color: color-mix(in srgb, var(--primary-color-dark), var(--overlay) 50%) !important;
 }
 
 /* ---------------------------- Tooltips ---------------------------- */
@@ -1154,30 +1307,52 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
 
 /* ---------------------------- Settings ---------------------------- */
 
-.sidebarRegion__23e6b,
-.contentRegion__23e6b {
+.container__8a031 {
     background-color: var(--overlay) !important;
 }
 
-.accountProfileCard__1fed1 {
-    background-color: var(--base) !important;
-}
-
-.background__1fed1,
-.fieldList__1fed1 {
-    background-color: var(--overlay) !important;
-}
-
-.closeButton_c2b141 {
-    color: var(--love) !important;
-}
-
-.overlay_c0bea0 {
+.sidebar__409aa {
     background-color: var(--surface) !important;
 }
 
-.top_b3f026 .item_b3f026.brand_b3f026 {
-    background-color: transparent !important;
+.contentHeader_e9e3ed {
+    background-color: var(--overlay) !important;
+}
+
+.content_e9e3ed {
+    background-color: var(--overlay) !important;
+}
+
+.item_caf372:hover {
+    background-color: var(--highlightMed) !important;
+}
+
+.item_caf372.active_caf372 {
+    background-color: var(--highlightMed) !important;
+    color: var(--text) !important;
+}
+
+.sectionLabel__409aa .heading-sm\/medium_cf4812 {
+    color: var(--iris) !important;
+}
+
+.destructive_caf372 {
+    color: var(--love) !important;
+}
+
+.searchBarContainer_fffcb4::after,
+.fixedContent__409aa::after {
+    display: none !important;
+}
+
+.defaultKeybindGroup_f82450 {
+    background-color: color-mix(in srgb, var(--overlay), var(--muted) 10%) !important;
+}
+
+.key__61c93 {
+    background-color: color-mix(in srgb, var(--overlay), var(--muted) 10%) !important;
+    border-radius: 6px !important;
+    color: var(--text) !important;
 }
 
 
@@ -1203,21 +1378,173 @@ button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
     color: var(--gold) !important;
 }
 
-/* Search Box */
-.container__55c99 {
-    background-color: var(--overlay) !important;
-}
-
-.voiceFiltersPopout_e2f668{
+/* Search filter popup */
+.layer__59d0d .container__16eb0 {
     background-color: var(--overlay) !important;
     border-radius: 15px !important;
 }
+
+.groupHeader__971b5 .text-xs\/semibold_cf4812 {
+    color: var(--iris) !important;
+}
+
+.voiceFiltersPopout_e2f668 {
+    background-color: var(--overlay) !important;
+    border-radius: 15px !important;
+}
+
 .voiceFiltersFooter_e2f668 {
     background-color: var(--highlightLow) !important;
     border-radius: 15px !important;
 }
 
+.autocompletePillContainer__971b5 {
+    display: flex !important;
+}
 
+.filterPill__971b5 {
+    background-color: var(--highlightMed) !important;
+    border-radius: 4px 0 0 4px !important;
+    color: var(--text) !important;
+    padding: 2px 3px 2px 6px !important;
+}
+
+.answerPill__971b5 {
+    background-color: var(--highlightMed) !important;
+    border-radius: 0 4px 4px 0 !important;
+    color: var(--foam) !important;
+    padding: 2px 6px 2px 3px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.answerPill__971b5 .text-sm\/semibold_cf4812 {
+    color: var(--foam) !important;
+}
+
+
+/* ---------------------------- Dropdowns ---------------------------- */
+
+
+.selectDropdown__0edde {
+    background-color: var(--overlay) !important;
+    border-radius: 12px !important;
+    border: 2px solid color-mix(in srgb, var(--iris), transparent 50%) !important;
+    overflow: hidden !important;
+}
+
+.listBoxItem__2e223 {
+    border-radius: 8px !important;
+}
+
+.listBoxItem__2e223:hover {
+    background-color: var(--highlightMed) !important;
+}
+
+
+/* ---------------------------- Date Picker ---------------------------- */
+
+
+.calendarContainer__9bb02 {
+    background-color: var(--overlay) !important;
+    border: 2px solid color-mix(in srgb, var(--iris), transparent 50%) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.react-datepicker__header {
+    background-color: var(--overlay) !important;
+    border-bottom: 1px solid var(--highlightMed) !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+    color: var(--text) !important;
+}
+
+.react-datepicker__day {
+    background-color: var(--overlay) !important;
+    color: var(--text) !important;
+}
+
+.react-datepicker__day:hover {
+    background-color: var(--iris) !important;
+}
+
+.react-datepicker__day--today {
+    font-weight: bold !important;
+}
+
+.react-datepicker__day--disabled {
+    background-color: var(--base) !important;
+    color: var(--muted) !important;
+    opacity: 0.4 !important;
+}
+
+.react-datepicker__day--outside-month {
+    opacity: 0.6 !important;
+}
+
+.react-datepicker__navigation-icon {
+    color: var(--text) !important;
+}
+
+.calendarPicker_d27f17 .react-datepicker__day.react-datepicker__day--selected::after {
+    background-color: var(--iris) !important;
+}
+
+.react-datepicker__navigation {
+    border: none !important;
+    outline: none !important;
+}
+
+
+/* ---------------------------- Chat Sidebar ---------------------------- */
+
+
+.floating__01ae2 .container__9293f.themed__9293f {
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+    margin-bottom: 0 !important;
+}
+
+.floating__01ae2 .chatContent_f75fb0 {
+    border-radius: 0 !important;
+    border: none !important;
+    margin-top: 0 !important;
+}
+
+.floating__01ae2 {
+    border: 2px solid color-mix(in srgb, var(--pine), #000 50%) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+
+.chatTarget__01ae2.container__01ae2.floating__01ae2 {
+    margin-left: 0 !important;
+}
+
+.divider_ee23ac {
+    background-color: var(--overlay) !important;
+}
+
+
+/* ---------------------------- VC Screen ------------------------------- */
+
+.pulseGradient__11664 {
+    display: none !important;
+}
+
+.root_bfe55a {
+    background: var(--surface) !important;
+}
+
+.headerBar__49508.container__9293f.transparent__9293f {
+    border-bottom: 1px solid var(--border-subtle) !important;
+}
 
 /* 
 ==================================================================
@@ -1294,9 +1621,7 @@ Credits:
     .container__01ae2>.container__9293f
     /* vc chat titlebar */
     ,
-    .container_fb64c9>.container__9293f
-    /* new thread panel */
-    ,
+
     .peopleColumn__133bf
     /* online friends */
     ,
@@ -1315,14 +1640,11 @@ Credits:
     .outer_c0bea0.panel_c0bea0
     /* dm user panel */
     ,
-    .searchResultsWrap_a9e706
+    .searchResultsWrap_a98f3b 
     /* search results */
     ,
     .container_f369db
     /* forum */
-    ,
-    .chat_fb64c9
-    /* new thread panel */
     ,
     .container_a592e1
 
@@ -1435,13 +1757,13 @@ Credits:
         margin-bottom: var(--gap);
     }
 
-    .title_f75fb0
-
     /* chat titlebar inner */
-        {
+    .title_f75fb0 {
         border: none;
         background: none;
         margin-bottom: 0;
+        flex-direction: row !important;
+        align-items: center !important;
     }
 
     .chatContent_f75fb0
@@ -1624,20 +1946,6 @@ Credits:
         {
         margin: 0 var(--gap) var(--gap) 0;
         height: calc(100% - var(--gap));
-    }
-
-    .container__01ae2
-
-    /* forum/thread chat */
-        {
-        padding-left: calc((var(--gap) - var(--chat-resize-handle-width)));
-    }
-
-    .container_fb64c9
-
-    /* new thread panel */
-        {
-        background: none;
     }
 
     .chat_fb64c9::before
@@ -1946,6 +2254,26 @@ Server Member List
 Collapsible Search Bar 
 ===========================
 */
+.upperContainer__9293f {
+    overflow: hidden !important;
+    min-width: 0 !important;
+}
+
+.children__9293f {
+    min-width: 0 !important;
+    overflow: hidden !important;
+}
+
+.toolbar__9293f {
+    min-width: 0 !important;
+    overflow: hidden !important;
+}
+
+.search__49676 {
+    width: auto !important;
+    min-width: 32px !important;
+}
+
 .searchBar_c322aa {
     width: 32px !important;
     transition: width 0.2s ease-in-out !important;
@@ -1958,7 +2286,8 @@ Collapsible Search Bar
 
 .searchBar_c322aa:hover,
 .searchBar_c322aa:focus-within {
-    width: 226px !important;
+    width: 240px !important;
+    max-width: 100% !important;
     right: unset !important;
     background-color: var(--base) !important;
     border: 1px solid var(--input-border-default) !important;
@@ -1979,6 +2308,10 @@ Collapsible Search Bar
 .searchBar_c322aa:not(:focus-within):hover .searchAnswer_bd8186,
 .searchBar_c322aa:not(:focus-within):hover .public-DraftStyleDefault-block {
     opacity: 1 !important;
+}
+
+.searchBar_c322aa .icon_c322aa {
+    margin-right: 6px !important;
 }
 
 /* Search icon adjustments */
@@ -2014,6 +2347,6 @@ Collapsible Search Bar
 /* Placeholder text */
 .public-DraftEditorPlaceholder-inner {
     padding-top: 1px !important;
-    padding-left: 30px !important;
+    padding-left: 5px !important;
     transition: opacity 0.2s ease-in-out !important;
 }
