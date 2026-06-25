@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.3.2
+* @version 5.3.3
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -327,7 +327,7 @@
 .wrapper_ef3116.guilds__5e434 {
     margin-left: 10px !important;
     margin-right: 10px !important;
-    margin-bottom: 78px !important;
+    margin-bottom: calc(var(--custom-app-panels-height) + 18px) !important;
     border-radius: 16px !important;
     border: var(--menu-border-radius) solid color-mix(in srgb, var(--server-list-border-color), transparent 70%) !important;
     padding-left: 1px !important;
@@ -406,7 +406,11 @@
     border-radius: 20px !important;
     background-color: var(--surface) !important;
     margin-right: 10px !important;
-    margin-bottom: 78px !important;
+    margin-bottom: calc(var(--custom-app-panels-height) + 18px) !important;
+}
+
+.panels__5e434:has(.containerRtcOpened__37e49) ~ .sidebarList__5e434.sidebarListRounded__5e434 {
+    margin-bottom: 180px !important;
 }
 
 .container__2637a {
@@ -420,6 +424,7 @@
 .scroller__629e4.thin_d125d2.scrollerBase_d125d2.fade_d125d2 {
     scrollbar-width: none !important;
     margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 .content_d125d2 > *:not([aria-hidden="true"]) {
