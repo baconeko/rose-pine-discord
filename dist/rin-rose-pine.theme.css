@@ -1,23 +1,35 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.1.0
+* @version 5.3.0
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
 */
 
-/* 
-CONFIGURATION
-*/
+/* CONFIGURATION */
 
 :root {
-    /* 1=False ; 0=True */
-    --windows-hover: 1;
-    --client-macos: 0;
+    --windows-hover: 0; /* Enables window buttons hiding */
+    --client-macos: 0; /* Enables macOS client styling */
 
     /* Border Color Configuration */
     --server-list-border-color: var(--gold);
+    --channel-list-border-color: var(--love);
+    --main-chat-border-color: var(--pine);
+    --user-area-border-color: var(--iris);
+    --member-list-border-color: var(--gold);
+    --top-bar-border-color: var(--muted);
+    --search-results-border-color: var(--iris);
+    --text-input-border-color: var(--foam);
+    
+    /* Main Colors Configuration */
+    --primary-color: var(--love) !important;
+    --secondary-color: var(--foam) !important;
+    --tertiary-color: var(--iris) !important;
+    --primary-color-dark: color-mix(in srgb, var(--primary-color), var(--overlay) 20%) !important;
+    --secondary-color-dark: color-mix(in srgb, var(--secondary-color), var(--overlay) 20%) !important;
+    --tertiary-color-dark: color-mix(in srgb, var(--tertiary-color), var(--overlay) 20%) !important;
     
     --base: #191724;
     --surface: #1f1d2e;
@@ -34,21 +46,14 @@ CONFIGURATION
     --highlightLow: #21202e;
     --highlightMed: #403d52;
     --highlightHigh: #524f67;
-}
 
-.theme-dark {
-    /* Main Colors */
-    --primary-color: var(--love) !important;
-    --primary-color-dark: color-mix(in srgb, var(--primary-color), var(--overlay) 20%) !important;
-    --secondary-color: var(--foam) !important;
-    --tertiary-color: var(--iris) !important;
-    --tertiary-color-dark: color-mix(in srgb, var(--tertiary-color), var(--overlay) 20%) !important;
-    
     /* Overlay Color Variants */
     --overlay-high: color-mix(in srgb, var(--overlay), var(--muted) 10%);
     --overlay-higher: color-mix(in srgb, var(--overlay), var(--muted) 20%);
     --overlay-highest: color-mix(in srgb, var(--overlay), var(--muted) 30%);
+}
 
+.theme-dark {
     /* Color Overrides */
     --background-base-low: var(--overlay) !important;
     --background-base-lower: var(--surface) !important;
@@ -135,7 +140,7 @@ CONFIGURATION
     content: "Rosé Pine";
     position: absolute;
     top: 8px;
-    left: if(style(--client-macos: 1): 138px; else: 62px);
+    left: if(style(--client-macos: 0): 138px; else: 62px);
     color: #ffffff77;
     font-size: 14px;
     font-weight: bold;
@@ -258,7 +263,7 @@ CONFIGURATION
     border-radius: 50%;
     transition: background-color 0.2s ease-in-out;
     margin: 0 4px;
-    opacity: var(--windows-hover);
+    opacity: if(style(--windows-hover: 0): 1; else: 0);
     cursor: default;
 }
 .trailing_c38106 {
@@ -395,7 +400,7 @@ CONFIGURATION
 /* ---------------------------- Channel List ---------------------------- */
 
 .sidebarList__5e434.sidebarListRounded__5e434 {
-    border: 2px solid color-mix(in srgb, var(--love), transparent 70%) !important;
+    border: 2px solid color-mix(in srgb, var(--channel-list-border-color), transparent 70%) !important;
     border-radius: 20px !important;
     background-color: var(--surface) !important;
     margin-right: 10px !important;
@@ -475,7 +480,7 @@ CONFIGURATION
 }
 .panels__5e434 {
     background-color: var(--surface) !important;
-    border: 2px solid color-mix(in srgb, var(--iris), transparent 70%) !important;
+    border: 2px solid color-mix(in srgb, var(--user-area-border-color), transparent 70%) !important;
     border-radius: 20px !important;
 }
 .sidebar__5e434:after {
@@ -539,7 +544,7 @@ CONFIGURATION
     /* Main Chat area */
     overflow: hidden;
     background-color: var(--surface) !important;
-    border: 2px solid color-mix(in srgb, var(--pine), transparent 70%) !important;
+    border: 2px solid color-mix(in srgb, var(--main-chat-border-color), transparent 70%) !important;
     border-radius: var(--radius-lg) !important;
 }
 
@@ -811,9 +816,8 @@ path.unreadPillCapStroke__908e2 {
 /* -------------Message Area TopBar - Channel Name -----------*/
 .title_f75fb0 {
     background-color: var(--surface) !important;
-    /* add roundness */
     border-radius: 15px !important;
-    border: 2px solid var(--muted) !important;
+    border: 2px solid var(--top-bar-border-color) !important;
     flex-direction: row !important;
     align-items: center !important;
     overflow: hidden !important;
@@ -916,7 +920,7 @@ path.unreadPillCapStroke__908e2 {
 /* Search Results */
 .searchResultsWrap_a98f3b {
     background-color: var(--surface) !important;
-    border: 2px solid color-mix(in srgb, var(--iris), transparent 70%) !important;
+    border: 2px solid color-mix(in srgb, var(--search-results-border-color), transparent 70%) !important;
     border-radius: 20px !important;
     overflow: hidden !important;
     margin-left: 10px !important;
@@ -1094,7 +1098,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 
 .channelTextArea_f75fb0 {
     background-color: var(--overlay) !important;
-    border: 2px solid color-mix(in srgb, var(--foam), transparent 70%) !important;
+    border: 2px solid color-mix(in srgb, var(--text-input-border-color), transparent 70%) !important;
     border-radius: 25px !important;
 }
 
@@ -1653,8 +1657,6 @@ Credits:
     /* shop */
     .outer_c0bea0.panel_c0bea0,
     /* dm user panel */
-    .searchResultsWrap_a98f3b,
-    /* search results */
     .container_f369db,
     /* forum */
     .container_a592e1,
