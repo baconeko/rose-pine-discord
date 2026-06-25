@@ -15,6 +15,9 @@ CONFIGURATION
     /* 1=False ; 0=True */
     --windows-hover: 1;
     --client-macos: 0;
+
+    /* Border Color Configuration */
+    --server-list-border-color: var(--gold);
     
     --base: #191724;
     --surface: #1f1d2e;
@@ -319,7 +322,7 @@ CONFIGURATION
     margin-right: 10px !important;
     margin-bottom: 78px !important;
     border-radius: 16px !important;
-    border: 2px solid color-mix(in srgb, var(--gold), transparent 70%) !important;
+    border: 2px solid color-mix(in srgb, var(--server-list-border-color), transparent 70%) !important;
     padding-left: 1px !important;
     mask: none !important;
 }
