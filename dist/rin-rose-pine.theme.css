@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.3.1
+* @version 5.3.2
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -22,6 +22,8 @@
     --top-bar-border-color: var(--muted);
     --search-results-border-color: var(--iris);
     --text-input-border-color: var(--foam);
+
+    --menu-border-radius: 2px;
     
     /* Main Colors Configuration */
     --primary-color: var(--love) !important;
@@ -327,7 +329,7 @@
     margin-right: 10px !important;
     margin-bottom: 78px !important;
     border-radius: 16px !important;
-    border: 2px solid color-mix(in srgb, var(--server-list-border-color), transparent 70%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--server-list-border-color), transparent 70%) !important;
     padding-left: 1px !important;
     mask: none !important;
 }
@@ -400,7 +402,7 @@
 /* ---------------------------- Channel List ---------------------------- */
 
 .sidebarList__5e434.sidebarListRounded__5e434 {
-    border: 2px solid color-mix(in srgb, var(--channel-list-border-color), transparent 70%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--channel-list-border-color), transparent 70%) !important;
     border-radius: 20px !important;
     background-color: var(--surface) !important;
     margin-right: 10px !important;
@@ -480,7 +482,7 @@
 }
 .panels__5e434 {
     background-color: var(--surface) !important;
-    border: 2px solid color-mix(in srgb, var(--user-area-border-color), transparent 70%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--user-area-border-color), transparent 70%) !important;
     border-radius: 20px !important;
 }
 .sidebar__5e434:after {
@@ -544,7 +546,7 @@
     /* Main Chat area */
     overflow: hidden;
     background-color: var(--surface) !important;
-    border: 2px solid color-mix(in srgb, var(--main-chat-border-color), transparent 70%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--main-chat-border-color), transparent 70%) !important;
     border-radius: var(--radius-lg) !important;
 }
 
@@ -817,7 +819,7 @@ path.unreadPillCapStroke__908e2 {
 .title_f75fb0 {
     background-color: var(--surface) !important;
     border-radius: 15px !important;
-    border: 2px solid var(--top-bar-border-color) !important;
+    border: var(--menu-border-radius) solid var(--top-bar-border-color) !important;
     flex-direction: row !important;
     align-items: center !important;
     overflow: hidden !important;
@@ -920,7 +922,7 @@ path.unreadPillCapStroke__908e2 {
 /* Search Results */
 .searchResultsWrap_a98f3b {
     background-color: var(--surface) !important;
-    border: 2px solid color-mix(in srgb, var(--search-results-border-color), transparent 70%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--search-results-border-color), transparent 70%) !important;
     border-radius: 20px !important;
     overflow: hidden !important;
     margin-left: 10px !important;
@@ -1098,7 +1100,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 
 .channelTextArea_f75fb0 {
     background-color: var(--overlay) !important;
-    border: 2px solid color-mix(in srgb, var(--text-input-border-color), transparent 70%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--text-input-border-color), transparent 70%) !important;
     border-radius: 25px !important;
 }
 
@@ -1463,7 +1465,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 .selectDropdown__0edde {
     background-color: var(--overlay) !important;
     border-radius: 12px !important;
-    border: 2px solid color-mix(in srgb, var(--iris), transparent 50%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--iris), transparent 50%) !important;
     overflow: hidden !important;
 }
 
@@ -1481,7 +1483,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 
 .calendarContainer__9bb02 {
     background-color: var(--overlay) !important;
-    border: 2px solid color-mix(in srgb, var(--iris), transparent 50%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--iris), transparent 50%) !important;
     border-radius: 12px !important;
     overflow: hidden !important;
 }
@@ -1560,7 +1562,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 }
 
 .floating__01ae2 {
-    border: 2px solid color-mix(in srgb, var(--pine), #000 50%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--main-chat-border-color), #000 50%) !important;
     border-radius: 16px !important;
     overflow: hidden !important;
     padding: 0 !important;
@@ -1664,7 +1666,7 @@ Credits:
     .container__955a3
     {
         border-radius: var(--radius-lg) !important;
-        border: 2px solid var(--border-subtle) !important;
+        border: var(--menu-border-radius) solid var(--border-subtle) !important;
         backdrop-filter: var(--panel-backdrop-filter) !important;
     }
 
@@ -1931,7 +1933,7 @@ Credits:
     /* vc container */
         {
         border-radius: var(--radius-lg) !important;
-        border: 2px solid var(--border-subtle);
+        border: var(--menu-border-radius) solid var(--border-subtle);
         overflow: hidden;
     }
 
@@ -2158,7 +2160,7 @@ Credits:
 
     /* profile outer */
         {
-        border: 2px solid var(--border-subtle);
+        border: var(--menu-border-radius) solid var(--border-subtle);
     }
 
     .root__24502 {
@@ -2263,7 +2265,7 @@ Server Member List
 ===========================
 */
 .container_c8ffbb {
-    border: 2px solid color-mix(in srgb, var(--gold), transparent 70%) !important;
+    border: var(--menu-border-radius) solid color-mix(in srgb, var(--member-list-border-color), transparent 70%) !important;
     border-radius: var(--radius-lg) !important;
 }
 
