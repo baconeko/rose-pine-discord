@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.3.0
+* @version 5.3.1
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -140,7 +140,7 @@
     content: "Rosé Pine";
     position: absolute;
     top: 8px;
-    left: if(style(--client-macos: 0): 138px; else: 62px);
+    left: if(style(--client-macos: 1): 138px; else: 62px);
     color: #ffffff77;
     font-size: 14px;
     font-weight: bold;
