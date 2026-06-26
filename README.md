@@ -14,7 +14,7 @@
 ## Usage
 
 > [!NOTE]
-> For Discord web, see our [userstyle](https://userstyles.world/style/18964/rose-pine)
+> The web version is available as a [userstyle](https://github.com/rose-pine/userstyles/tree/main/styles/discord)
 
 1. Install a Discord client mod, such as [Vencord](https://vencord.dev/) or [BetterDiscord](https://betterdiscord.app/)
 2. Download your preferred variant ([releases](https://github.com/rose-pine/discord/releases))
