@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.3.7
+* @version 5.3.8
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -30,6 +30,7 @@
     --secondary-color: var(--foam) !important;
     --tertiary-color: var(--iris) !important;
     --primary-color-dark: color-mix(in srgb, var(--primary-color), var(--overlay) 20%) !important;
+    --primary-color-darker: color-mix(in srgb, var(--primary-color), var(--overlay) 30%) !important;
     --secondary-color-dark: color-mix(in srgb, var(--secondary-color), var(--overlay) 20%) !important;
     --tertiary-color-dark: color-mix(in srgb, var(--tertiary-color), var(--overlay) 20%) !important;
     
@@ -74,6 +75,7 @@
     --bg-surface-raised: var(--overlay-high) !important;
     --brand-360: var(--primary-color) !important;
     --brand-500: var(--primary-color-dark) !important;
+    --brand-560: var(--primary-color-darker) !important;
     --card-background-default: var(--overlay-high) !important;
     --checkbox-background-selected-default: var(--tertiary-color) !important;
     --checkbox-background-selected-hover: color-mix(in srgb, var(--tertiary-color), var(--overlay) 30%) !important;
