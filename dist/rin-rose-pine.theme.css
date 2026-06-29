@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.3.8
+* @version 5.3.9
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -10,10 +10,10 @@
 /* CONFIGURATION */
 
 :root {
-    --windows-hover: 0; /* Enables window buttons hiding */
+    --windows-hover: 0; /* Enables window buttons hiding (not recommended since the inbox button was added) */
     --client-macos: 0; /* Enables macOS client styling */
 
-    /* Border Color Configuration */
+    /* Main UI Border Color Configuration */
     --server-list-border-color: var(--gold);
     --channel-list-border-color: var(--love);
     --main-chat-border-color: var(--pine);
@@ -23,17 +23,20 @@
     --search-results-border-color: var(--iris);
     --text-input-border-color: var(--foam);
 
-    --menu-border-radius: 2px;
+    /* Sizes Configuration */
+
+    /* spacing between panels */
+    --gap: 8px;
+    /* thickness of unread messages divider and highlighted message borders */
+    --divider-thickness: 4px;
+    /* width of main ui borders */
+    --menu-border-width: 2px;
+    /* height of the system bar */
+    --custom-app-top-bar-height: 32px;
+    /* padding for the server list */
+    --custom-guild-list-padding: 12px;
     
-    /* Main Colors Configuration */
-    --primary-color: var(--love) !important;
-    --secondary-color: var(--foam) !important;
-    --tertiary-color: var(--iris) !important;
-    --primary-color-dark: color-mix(in srgb, var(--primary-color), var(--overlay) 20%) !important;
-    --primary-color-darker: color-mix(in srgb, var(--primary-color), var(--overlay) 30%) !important;
-    --secondary-color-dark: color-mix(in srgb, var(--secondary-color), var(--overlay) 20%) !important;
-    --tertiary-color-dark: color-mix(in srgb, var(--tertiary-color), var(--overlay) 20%) !important;
-    
+    /* Rosé Pine Colors */
     --base: #191724;
     --surface: #1f1d2e;
     --overlay: #26233a;
@@ -49,6 +52,16 @@
     --highlightLow: #21202e;
     --highlightMed: #403d52;
     --highlightHigh: #524f67;
+
+    /* Main Colors Configuration */
+    --primary-color: var(--love) !important;
+    --secondary-color: var(--foam) !important;
+    --tertiary-color: var(--iris) !important;
+    
+    --primary-color-dark: color-mix(in srgb, var(--primary-color), var(--overlay) 20%) !important;
+    --primary-color-darker: color-mix(in srgb, var(--primary-color), var(--overlay) 30%) !important;
+    --secondary-color-dark: color-mix(in srgb, var(--secondary-color), var(--overlay) 20%) !important;
+    --tertiary-color-dark: color-mix(in srgb, var(--tertiary-color), var(--overlay) 20%) !important;
 
     /* Overlay Color Variants */
     --overlay-high: color-mix(in srgb, var(--overlay), var(--muted) 10%);
@@ -334,11 +347,11 @@
 /* ---------------------------- Server List (Left Sidebar) ---------------------------- */
 
 .wrapper_ef3116.guilds__5e434 {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-    margin-bottom: calc(var(--custom-app-panels-height) + 18px) !important;
+    margin-left: var(--gap) !important;
+    margin-right: var(--gap) !important;
+    margin-bottom: calc(var(--custom-app-panels-height) + var(--gap) * 2) !important;
     border-radius: 16px !important;
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--server-list-border-color), transparent 70%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--server-list-border-color), transparent 70%) !important;
     padding-left: 1px !important;
     mask: none !important;
 }
@@ -411,11 +424,11 @@
 /* ---------------------------- Channel List ---------------------------- */
 
 .sidebarList__5e434.sidebarListRounded__5e434 {
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--channel-list-border-color), transparent 70%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--channel-list-border-color), transparent 70%) !important;
     border-radius: 20px !important;
     background-color: var(--surface) !important;
-    margin-right: 10px !important;
-    margin-bottom: calc(var(--custom-app-panels-height) + 18px) !important;
+    margin-right: var(--gap) !important;
+    margin-bottom: calc(var(--custom-app-panels-height) + var(--gap) * 2) !important;
 }
 
 .panels__5e434:has(.containerRtcOpened__37e49) ~ .sidebarList__5e434.sidebarListRounded__5e434 {
@@ -490,8 +503,10 @@
 }
 .panels__5e434 {
     background-color: var(--surface) !important;
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--user-area-border-color), transparent 70%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--user-area-border-color), transparent 70%) !important;
     border-radius: 20px !important;
+    bottom: var(--gap) !important;
+    --custom-panels-spacing: var(--gap) !important;
 }
 .sidebar__5e434:after {
     background-color: var(--overlay) !important;
@@ -554,12 +569,8 @@
     /* Main Chat area */
     overflow: hidden;
     background-color: var(--surface) !important;
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--main-chat-border-color), transparent 70%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--main-chat-border-color), transparent 70%) !important;
     border-radius: var(--radius-lg) !important;
-}
-
-.chat_f75fb0 {
-    padding-bottom: 8px !important;
 }
 
 .page__5e434 {
@@ -827,7 +838,7 @@ path.unreadPillCapStroke__908e2 {
 .title_f75fb0 {
     background-color: var(--surface) !important;
     border-radius: 15px !important;
-    border: var(--menu-border-radius) solid var(--top-bar-border-color) !important;
+    border: var(--menu-border-width) solid var(--top-bar-border-color) !important;
     flex-direction: row !important;
     align-items: center !important;
     overflow: hidden !important;
@@ -930,7 +941,7 @@ path.unreadPillCapStroke__908e2 {
 /* Search Results */
 .searchResultsWrap_a98f3b {
     background-color: var(--surface) !important;
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--search-results-border-color), transparent 70%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--search-results-border-color), transparent 70%) !important;
     border-radius: 20px !important;
     overflow: hidden !important;
     margin-left: 10px !important;
@@ -1108,7 +1119,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 
 .channelTextArea_f75fb0 {
     background-color: var(--overlay) !important;
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--text-input-border-color), transparent 70%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--text-input-border-color), transparent 70%) !important;
     border-radius: 25px !important;
 }
 
@@ -1472,7 +1483,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 .selectDropdown__0edde {
     background-color: var(--overlay) !important;
     border-radius: 12px !important;
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--iris), transparent 50%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--iris), transparent 50%) !important;
     overflow: hidden !important;
 }
 
@@ -1490,7 +1501,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 
 .calendarContainer__9bb02 {
     background-color: var(--overlay) !important;
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--iris), transparent 50%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--iris), transparent 50%) !important;
     border-radius: 12px !important;
     overflow: hidden !important;
 }
@@ -1569,7 +1580,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 }
 
 .floating__01ae2 {
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--main-chat-border-color), #000 50%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--main-chat-border-color), #000 50%) !important;
     border-radius: 16px !important;
     overflow: hidden !important;
     padding: 0 !important;
@@ -1613,26 +1624,7 @@ Credits:
 
 :root {
     container-name: root;
-    --custom-guild-list-padding: 12px;
     --panel-backdrop-filter: none;
-
-    /* sizes */
-    --gap: 10px;
-    /* spacing between panels */
-    --divider-thickness: 4px;
-    /* thickness of unread messages divider and highlighted message borders */
-
-    /* animation/transition options */
-    --animations: on;
-    /* turn off to disable all midnight animations/transitions */
-    --list-item-transition: 0.2s ease;
-    /* transition for list items */
-
-    /* top bar options */
-    --move-top-bar-buttons: off;
-    /* turn on to move inbox button to the server list (recommend setting top bar height to 24px) */
-    --custom-app-top-bar-height: 32px;
-    /* height of the titlebar/top bar */
 
     --small-user-panel: off;
     /* turn on to make the user panel smaller like in old discord */
@@ -1670,10 +1662,12 @@ Credits:
     /* forum */
     .container_a592e1,
     /* quests */
-    .container__955a3
+    .container__955a3,
+    /* boosts */
+    .container__89463
     {
         border-radius: var(--radius-lg) !important;
-        border: var(--menu-border-radius) solid var(--border-subtle) !important;
+        border: var(--menu-border-width) solid var(--border-subtle) !important;
         backdrop-filter: var(--panel-backdrop-filter) !important;
     }
 
@@ -1885,7 +1879,7 @@ Credits:
     }
 
     /* shop */
-    .shop__6db1d, .container__955a3
+    .shop__6db1d, .container__955a3, .container__89463
     {
         overflow: hidden;
         height: auto;
@@ -1940,7 +1934,7 @@ Credits:
     /* vc container */
         {
         border-radius: var(--radius-lg) !important;
-        border: var(--menu-border-radius) solid var(--border-subtle);
+        border: var(--menu-border-width) solid var(--border-subtle);
         overflow: hidden;
     }
 
@@ -2167,7 +2161,7 @@ Credits:
 
     /* profile outer */
         {
-        border: var(--menu-border-radius) solid var(--border-subtle);
+        border: var(--menu-border-width) solid var(--border-subtle);
     }
 
     .root__24502 {
@@ -2272,7 +2266,7 @@ Server Member List
 ===========================
 */
 .container_c8ffbb {
-    border: var(--menu-border-radius) solid color-mix(in srgb, var(--member-list-border-color), transparent 70%) !important;
+    border: var(--menu-border-width) solid color-mix(in srgb, var(--member-list-border-color), transparent 70%) !important;
     border-radius: var(--radius-lg) !important;
 }
 
