@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.3.6
+* @version 5.3.7
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -180,6 +180,12 @@
 .removeButton_ffefd9 .button_a22cb0.sm_a22cb0.secondary_a22cb0.hasText_a22cb0:hover,
 .removeButton__28d5e .button_a22cb0.sm_a22cb0.secondary_a22cb0.hasText_a22cb0:hover {
     background-color: color-mix(in srgb, var(--control-critical-primary-background-default), var(--overlay) 20%) !important;
+}
+
+.custom-user-profile-theme.theme-dark .button_a22cb0.sm_a22cb0.secondary_a22cb0 {
+    --control-secondary-background-default: var(--opacity-white-8) !important;
+    --control-secondary-background-hover: var(--opacity-white-16) !important;
+    --control-secondary-background-active: var(--opacity-white-12) !important;
 }
 
 /* YABDP4Nitro button customizations in the Profiles page */
@@ -436,11 +442,6 @@
     border-top-right-radius: 20px !important;
 }
 
-.menu_c1e9c4 {
-    /* Right click menu */
-    background-color: var(--overlay) !important;
-}
-
 .sidebarList_c48ade {
     background-color: transparent !important;
     border: transparent !important;
@@ -475,7 +476,6 @@
 
 .container__13cf1,
 /* Category name */
-.defaultColor__4bd52,
 .container__2d263,
 /*User profile at the bottom left*/
 .title_b6c092,
@@ -1069,10 +1069,6 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 /* User Popout Card */
 
 .body_af7fb7 {
-    background-color: var(--overlay) !important;
-}
-
-.header__5be3e {
     background-color: var(--overlay) !important;
 }
 
