@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.3.5
+* @version 5.3.6
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -247,7 +247,8 @@
 }
 
 .bar_c38106.systemBar_c38106 {
-    background-color: color-mix(in srgb, var(--background-scrim) 72.157%, var(--overlay)) !important;
+    background: None !important;
+    z-index: 1003 !important;
 }
 
 .bar_c38106.systemBar_c38106.fixed_c38106.show_c38106.disablePointerEvents_c38106 {
@@ -1466,7 +1467,6 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 .answerPill__971b5 .text-sm\/semibold_cf4812 {
     color: var(--foam) !important;
 }
-
 
 /* ---------------------------- Dropdowns ---------------------------- */
 
