@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.4.0
+* @version 5.4.1
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -10,8 +10,15 @@
 /* CONFIGURATION */
 
 :root {
-    --windows-hover: 0; /* Enables window buttons hiding (not recommended since the inbox button was added) */
+    --windows-hover: 0; /* Enables window buttons hiding (not recommended once the inbox button was added) */
     --client-macos: 0; /* Enables macOS client styling */
+
+    /* DM Sidebar Configuration */
+    --hide-search-palette: 0; /* Hides the button to open the search palette */
+    --hide-nitro: 0; /* Hides the Nitro menu item */
+    --hide-library: 0; /* Hides the Library menu item */
+    --hide-shop: 0; /* Hides the Shop menu item */
+    --hide-quests: 0; /* Hides the Quests menu item */
 
     /* Main UI Border Color Configuration */
     --server-list-border-color: var(--gold);
@@ -556,13 +563,25 @@
 
 /* ---------------------------- Direct Messages ---=----------------------- */
 
-/* Removes the nitro, library, and shop tabs from the sidebar */
-.searchBar_e6b769,
-.channel__972a0.container_e45859:has([data-list-item-id*="nitro"]),
-.channel__972a0.container_e45859:has([data-list-item-id*="library"]) {
-    display: none !important;
+.searchBar_e6b769 {
+    display: if(style(--hide-search-palette: 1): none; else: flex) !important;
 }
 
+.channel__972a0.container_e45859:has([href="/store"]) {
+    display: if(style(--hide-nitro: 1): none; else: block) !important;
+}
+
+.channel__972a0.container_e45859:has([href="/library"]) {
+    display: if(style(--hide-library: 1): none; else: block) !important;
+}
+
+.channel__972a0.container_e45859:has([href="/shop"]) {
+    display: if(style(--hide-shop: 1): none; else: block) !important;
+}
+
+.channel__972a0.container_e45859:has([href="/quest-home"]) {
+    display: if(style(--hide-quests: 1): none; else: block) !important;
+}
 
 /* ---------------------------- Main Chat Area ---------------------------- */
 
