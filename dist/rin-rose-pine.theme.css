@@ -1,7 +1,7 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.3.9
+* @version 5.4.0
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
@@ -197,6 +197,7 @@
     background-color: color-mix(in srgb, var(--control-critical-primary-background-default), var(--overlay) 20%) !important;
 }
 
+.guildBoostCtas__9dbc9 .button_a22cb0.md_a22cb0.secondary_a22cb0.hasText_a22cb0,
 .custom-user-profile-theme.theme-dark .button_a22cb0.sm_a22cb0.secondary_a22cb0 {
     --control-secondary-background-default: var(--opacity-white-8) !important;
     --control-secondary-background-hover: var(--opacity-white-16) !important;
@@ -1477,8 +1478,8 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
     color: var(--foam) !important;
 }
 
-/* ---------------------------- Dropdowns ---------------------------- */
 
+/* ---------------------------- Dropdowns ---------------------------- */
 
 .selectDropdown__0edde {
     background-color: var(--overlay) !important;
@@ -1497,7 +1498,6 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 
 
 /* ---------------------------- Date Picker ---------------------------- */
-
 
 .calendarContainer__9bb02 {
     background-color: var(--overlay) !important;
@@ -1555,7 +1555,6 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 
 /* ---------------------------- Chat Sidebar ---------------------------- */
 
-
 .floating__01ae2 .container__9293f.themed__9293f {
     border-radius: 0 !important;
     border: none !important;
@@ -1608,6 +1607,49 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 .headerBar__49508.container__9293f.transparent__9293f {
     border-bottom: 1px solid var(--border-subtle) !important;
 }
+
+
+/* ---------------------------- Boost Menu ------------------------------- */
+
+.toolbar__89463.container__9293f.themed__9293f {
+    border-top: none !important;
+}
+
+.powerupsContainer__89463.thin_d125d2.scrollerBase_d125d2 {
+    overflow: hidden auto !important;
+}
+
+.powerupsContainer__89463.thin_d125d2.scrollerBase_d125d2::-webkit-scrollbar {
+    display: none !important;
+}
+
+.powerupsLevelContainer__89463.thin_d125d2.scrollerBase_d125d2 {
+    padding-bottom: 8px !important;
+}
+
+.powerupsLevelContainer__89463.thin_d125d2.scrollerBase_d125d2::-webkit-scrollbar {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.powerupsLevelContainer__89463.thin_d125d2.scrollerBase_d125d2::-webkit-scrollbar-thumb {
+    border: 4px solid transparent !important;
+    background-clip: padding-box !important;
+    border-radius: 8px !important;
+}
+
+.powerupsLevelContainer__89463 > [aria-hidden="true"]:last-child {
+    display: none !important;
+}
+
+.timestamp_df65b5 {
+    opacity: 0.8 !important;
+}
+
+.boostContainer__823e1 path {
+    --icon-strong: #FFF !important;
+}
+
 
 /* 
 ==================================================================
