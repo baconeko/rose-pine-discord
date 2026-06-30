@@ -1,13 +1,14 @@
 /**
 * @name rin's Rosé Pine
 * @author baconeko
-* @version 5.4.1
+* @version 5.4.2
 * @description All natural pine, faux fur and a bit of soho vibes for the classy minimalist—with a couple touch ups from rin. Set default theme to Ash to use.
 * @source https://github.com/baconeko/rose-pine-discord
 * @updateUrl https://github.com/baconeko/rose-pine-discord/blob/main/dist/rin-rose-pine.theme.css
 */
 
-/* CONFIGURATION */
+
+/* ------------------------ CONFIGURATION --------------------------- */
 
 :root {
     --windows-hover: 0; /* Enables window buttons hiding (not recommended once the inbox button was added) */
@@ -19,6 +20,9 @@
     --hide-library: 0; /* Hides the Library menu item */
     --hide-shop: 0; /* Hides the Shop menu item */
     --hide-quests: 0; /* Hides the Quests menu item */
+    
+    /* Hides the gift button in the main chat area */
+    --hide-gift-button: 0;
 
     /* Main UI Border Color Configuration */
     --server-list-border-color: var(--gold);
@@ -64,6 +68,7 @@
     --primary-color: var(--love) !important;
     --secondary-color: var(--foam) !important;
     --tertiary-color: var(--iris) !important;
+    --mention-color: var(--rose) !important;
     
     --primary-color-dark: color-mix(in srgb, var(--primary-color), var(--overlay) 20%) !important;
     --primary-color-darker: color-mix(in srgb, var(--primary-color), var(--overlay) 30%) !important;
@@ -78,12 +83,16 @@
 
 .theme-dark {
     /* Color Overrides */
+    --__spoiler-background-color--hidden: var(--subtle) !important;
     --background-base-low: var(--overlay) !important;
     --background-base-lower: var(--surface) !important;
     --background-base-lowest: var(--surface) !important;
     --background-brand: var(--primary-color-dark) !important;
+    --background-code: var(--overlay-high) !important;
+    --background-feedback-info: color-mix(in srgb, var(--primary-color), transparent 92%) !important;
     --background-mod-normal: var(--overlay-high) !important;
     --background-mod-subtle: hsl(from var(--overlay-higher) h s l / 0.35) !important;
+    --background-mod-muted: hsl(from var(--overlay-higher) h s l / 0.50) !important;
     --background-surface-high: var(--overlay) !important;
     --background-surface-higher: var(--overlay) !important;
     --background-surface-highest: var(--overlay-high) !important;
@@ -93,6 +102,8 @@
     --bd-brand-hover: var(--primary-color-dark) !important;
     --bg-surface-overlay-tmp: var(--overlay-high) !important;
     --bg-surface-raised: var(--overlay-high) !important;
+    --border-subtle: var(--overlay-higher) !important;
+    --brand-260: var(--primary-color) !important;
     --brand-360: var(--primary-color) !important;
     --brand-500: var(--primary-color-dark) !important;
     --brand-560: var(--primary-color-darker) !important;
@@ -106,17 +117,39 @@
     --control-primary-background-hover: color-mix(in srgb, var(--primary-color-dark), var(--overlay) 20%) !important;
     --control-secondary-background-default: var(--overlay-high) !important;
     --control-secondary-background-hover: var(--overlay-higher) !important;
-    --icon-strong: var(--primary-color-dark) !important;
+    --icon-feedback-info: var(--primary-color) !important;
+    --icon-feedback-warning: var(--mention-color) !important;
+    --icon-muted: var(--subtle) !important;
+    --icon-strong: var(--text) !important;
     --icon-subtle: color-mix(in srgb, var(--icon-strong), var(--overlay) 20%) !important;
+    --input-background-default: var(--surface) !important;
     --input-border-active: var(--primary-color) !important;
     --input-border-focus: var(--primary-color) !important;
     --input-border-hover: var(--primary-color-dark) !important;
     --input-text-default: var(--text) !important;
+    --interactive-background-hover: var(--overlay-high) !important;
+    --interactive-background-selected: var(--overlay-higher) !important;
+    --interactive-text-default: var(--subtle) !important;
+    --interactive-text-hover: var(--text) !important;
+    --mention-background: color-mix(in srgb, var(--mention-color), transparent 90%) !important;
+    --mention-foreground: color-mix(in srgb, var(--mention-color), transparent 0%) !important;
+    --message-background-hover: var(--overlay) !important;
+    --message-highlight-background-default: color-mix(in srgb, var(--primary-color), transparent 85%) !important;
+    --message-mentioned-background-default: color-mix(in srgb, var(--mention-color), transparent 80%) !important;
+    --message-mentioned-background-hover: color-mix(in srgb, var(--mention-color), transparent 85%) !important;
     --modal-background: var(--overlay) !important;
     --modal-footer-background: var(--overlay) !important;
+    --polls-voted-fill: color-mix(in srgb, var(--primary-color), transparent 85%) !important;
+    --primary-400: var(--overlay-highest) !important;
     --primary-500: var(--overlay-highest) !important;
     --radio-background-selected-default: var(--primary-color-dark) !important;
     --radio-background-selected-hover: color-mix(in srgb, var(--primary-color-dark), var(--overlay) 20%) !important;
+    --reaction-background-default: var(--overlay-high) !important;
+    --reaction-background-hover: var(--overlay-higher) !important;
+    --reaction-border-default: var(--overlay-high) !important;
+    --reaction-border-hover: var(--overlay-higher) !important;
+    --reaction-text-default: var(--subtle) !important;
+    --reaction-text-hover: var(--text) !important;
     --slider-track-background: var(--overlay-highest) !important;
     --switch-background-active: var(--primary-color-dark) !important;
     --text-brand: var(--primary-color) !important;
@@ -131,7 +164,6 @@
 
 
 /* ---------------------------- Global Styles ---------------------------- */
-
 
 /* Main Background */
 .content__5e434 {
@@ -351,7 +383,6 @@
 }
 
 
-
 /* ---------------------------- Server List (Left Sidebar) ---------------------------- */
 
 .wrapper_ef3116.guilds__5e434 {
@@ -544,6 +575,7 @@
 .folderIcon__48112 {
     color: var(--foam) !important;
 }
+
 /* Server header without banner */
 .container_f37cb1[data-banner-visible="false"],
 .container_f37cb1[data-has-banner="false"] {
@@ -556,9 +588,8 @@
 }
 
 .progressContainer__0d0f9 {
-    background-color: var(--highlightMed) !important;
+    background-color: var(--overlay-high) !important;
 }
-
 
 
 /* ---------------------------- Direct Messages ---=----------------------- */
@@ -582,6 +613,7 @@
 .channel__972a0.container_e45859:has([href="/quest-home"]) {
     display: if(style(--hide-quests: 1): none; else: block) !important;
 }
+
 
 /* ---------------------------- Main Chat Area ---------------------------- */
 
@@ -807,14 +839,6 @@ path.unreadPillCapStroke__908e2 {
     background-color: var(--overlay) !important;
     border: none !important;
 }
-/* 
-.textarea__9daae.input__0ed4f.scrollbarGhostHairline__506b3.scrollbar__506b3 {
-    background-color: var(--highlightLow) !important;
-}
-
-.scrollbarGhostHairline__506b3 {
-    background-color: var(--highlightMed) !important;
-} */
 
 .toggleExpandSection__4d95d,
 .openFullPreviewSection__4d95d {
@@ -829,11 +853,17 @@ path.unreadPillCapStroke__908e2 {
     color: var(--love) !important;
 }
 
+/* Spoilers */
+
+.obscured.spoilerContent__299eb.spoilerMarkdownContent__299eb:hover {
+    background-color: color-mix(in srgb, var(--subtle), var(--text) 30%) !important;
+}
+
+.obscured.spoilerContent__299eb.spoilerMarkdownContent__299eb[aria-expanded="true"] {
+    background-color: color-mix(in srgb, var(--surface), var(--text) 10%) !important;
+}
 
 /* Polls */
-.container__0be77 {
-    background-color: var(--highlightMed) !important;
-}
 
 .buttonPresentation__0be77.button__201d5.lookFilled__201d5.colorBrand__201d5.sizeSmall__201d5.grow__201d5 {
     background-color: var(--gold) !important;
@@ -843,18 +873,20 @@ path.unreadPillCapStroke__908e2 {
 .buttonPresentation__0be77.secondaryButtonPresentation__0be77.button__201d5.lookFilled__201d5.sizeSmall__201d5.grow__201d5 {
     background-color: var(--love) !important;
 }
-.container_f69538.embed_f69538 {
-    background-color: var(--surface) !important;
-}
 
 /* Voice chat */
 .root_bfe55a {
     background: var(--base)
 }
 
+/* Edit Message Text Input */
+.message__5126c .themedBackground__74017 {
+    background: var(--overlay);
+}
 
 
 /* -------------Message Area TopBar - Channel Name -----------*/
+
 .title_f75fb0 {
     background-color: var(--surface) !important;
     border-radius: 15px !important;
@@ -957,6 +989,15 @@ path.unreadPillCapStroke__908e2 {
     color: var(--gold) !important;
 }
 
+/* New Thread Badge */
+.newBadge_faa96b.textBadge__463b7.base__463b7.eyebrow__463b7.baseShapeRound__463b7 {
+    color: var(--text) !important;
+}
+
+/* Original Post Tag */
+.botTagOP__82f07 {
+    color: var(--text) !important;
+}
 
 /* Search Results */
 .searchResultsWrap_a98f3b {
@@ -1006,6 +1047,7 @@ path.unreadPillCapStroke__908e2 {
     padding: 1px 4px 1px 2px !important;
 }
 
+
 /* ---------------------------- User Area (Bottom Left) ---------------------------- */
 
 /* Main Color */
@@ -1040,11 +1082,6 @@ rect[mask="url(#svg-mask-status-idle)"] {
     /* example - could be online/offline */
 }
 
-.buttons__37e49 .button__67645 {
-    /* Mute/Deafen/Settings buttons */
-    color: var(--iris) !important;
-}
-
 .rtcConnectionStatusConnected__06d62 {
     /* Voice Connected */
     color: var(--foam) !important;
@@ -1060,8 +1097,8 @@ rect[mask="url(#svg-mask-status-idle)"] {
     background-color: var(--surface) !important;
 }
 
-
 /* Screen Share */
+
 .panel__5dec7.activityPanel_c48ade {
     background-color: var(--surface) !important;
 }
@@ -1074,30 +1111,45 @@ button[aria-label="Disconnect"] .lottieIcon__5eb9b svg path {
     fill: var(--love) !important;
 }
 
-button[aria-label="Noise Suppression powered by Krisp"] .lottieIcon__5eb9b svg path {
-    fill: var(--subtle) !important;
+button:has(+ button[aria-label="Disconnect"]) .lottieIcon__5eb9b svg path {
+    fill: var(--icon-muted) !important;
 }
 
-button[aria-label="Mute"] .lottieIcon__5eb9b svg path {
-    fill: var(--iris) !important;
+button:has(+ button[aria-label="Disconnect"]):hover .lottieIcon__5eb9b svg path {
+    fill: var(--icon-subtle) !important;
 }
 
-button[aria-label="Deafen"] .lottieIcon__5eb9b svg path {
-    fill: var(--iris) !important;
+button:has(+ button[aria-label="Disconnect"]):active .lottieIcon__5eb9b svg path {
+    fill: var(--icon-strong) !important;
 }
 
-button[aria-label="User Settings"] .lottieIcon__5eb9b svg path {
-    fill: var(--iris) !important;
+button:is([aria-label="Mute"],
+          [aria-label="Deafen"],
+          [aria-label="User Settings"],
+          [aria-label="Disable Game Activity"],
+          [aria-label="Output Options"],
+          [aria-label="Input Options"]) {
+    color: color-mix(in srgb, var(--user-area-border-color), transparent 20%) !important;
 }
 
-button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
-    fill: var(--iris) !important;
+button:is([aria-label="Mute"],
+          [aria-label="Deafen"],
+          [aria-label="User Settings"],
+          [aria-label="Disable Game Activity"],
+          [aria-label="Output Options"],
+          [aria-label="Input Options"]):not(.redGlow__67645.enabled__67645):hover {
+    background-color: var(--control-secondary-background-hover) !important;
+    color: var(--user-area-border-color) !important;
+}
+
+.audioButtonParent__5e764 .buttonChevron__5e764 {
+    margin-left: 0px !important;
+    width: 18px !important;
 }
 
 .quickBar_b3c194 {
     background-color: var(--surface) !important;
 }
-
 
 /* User Popout Card */
 
@@ -1137,6 +1189,10 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
     margin-left: -20px;
 }
 
+.themedBackground__74017 {
+    background: none;
+}
+
 .channelTextArea_f75fb0 {
     background-color: var(--overlay) !important;
     border: var(--menu-border-width) solid color-mix(in srgb, var(--text-input-border-color), transparent 70%) !important;
@@ -1146,18 +1202,24 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 .inner__74017 {
     background-color: transparent !important;
     border: none !important;
+    padding-right: 12px !important;
+    padding-left: 16px !important;
 }
 
+/* Hidden Scrollbar */
+.scrollableContainer__74017.themedBackground__74017::-webkit-scrollbar {
+    display: none !important;
+}
 
-/* Add File */
-.channelAttachmentArea_b77158.scrollbarGhost__506b3.scrollbar__506b3 {
-    background-color: transparent !important;
+/* Static attach button */
+.attachWrapper__0923f {
+    top: 0;
+    align-self: flex-start !important;
 }
 
 .uploadContainer_aa605f,
 .upload_aa605f {
     background-color: var(--highlightMed) !important;
-
 }
 
 .wrapper_f7ecac {
@@ -1173,29 +1235,10 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
     background-color: transparent !important;
 }
 
-
-/* Attach Button */
-.attachButton__0923f.attachButton__74017.button__201d5.lookBlank__201d5.colorBrand__201d5.grow__201d5 {
-    background-color: transparent !important;
-}
-
-.contents__201d5.attachButtonInner__0923f {
-    color: var(--love) !important;
-}
-
-.contents__201d5.attachButtonInner__0923f:hover {
-    color: color-mix(in srgb, var(--love), transparent 70%) !important;
-}
-
-
 .placeholder__1b31f,
-/* Placeholder text */
 .slateTextArea_ec4baf {
-    /* Actual text input */
     padding-left: 20px !important;
 }
-
-/* POPUPS */
 
 /* Emoji */
 .emoji-picker-tab-panel,
@@ -1230,21 +1273,8 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 }
 
 .button__74017.button__24af7[aria-label*="gift"] {
-    display: none !important;
+    display: if(style(--hide-gift-button: 1): none; else: flex) !important;
 }
-
-
-/* ---------------------------- Buttons ---------------------------------*/
-.button__201d5.lookBlank__201d5 {
-    /*  Blank-look buttons (e.g., in user area) */
-    color: var(--subtle) !important;
-}
-
-.button__201d5.lookBlank__201d5:hover {
-    color: var(--text) !important;
-    background-color: var(--highlightLow) !important;
-}
-
 
 
 /* ---------------------------- Scrollbars ---------------------------- */
@@ -1269,6 +1299,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
     background-color: var(--highlightMed) !important;
 }
 
+
 /* ---------------------------- Unread Indicators ---------------------------- */
 
 .unread__2ea32 {
@@ -1287,6 +1318,7 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
     background-color: color-mix(in srgb, var(--primary-color-dark), var(--overlay) 50%) !important;
 }
 
+
 /* ---------------------------- Tooltips ---------------------------- */
 
 .tooltip__44b0c {
@@ -1295,11 +1327,8 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
     border: 2px solid var(--overlay) !important;
 }
 
-/* ---------------------------- Mentions ---------------------------- */
 
-.mentioned__5345c:before {
-    background-color: var(--rose) !important;
-}
+/* ---------------------------- Mentions ---------------------------- */
 
 .mention {
     background-color: rgba(var(--rose), 0.1) !important;
@@ -1308,8 +1337,24 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
     font-weight: bold !important;
 }
 
-.mentioned__5126c {
-    background-color: color-mix(in srgb, var(--rose), transparent 80%) !important;
+/* improve highlight message left edge */
+.message__5126c.mentioned__5126c::before,
+.replying__5126c::before,
+.ephemeral__5126c::before {
+    width: var(--divider-thickness) !important;
+    border-radius: var(--divider-thickness) !important;
+}
+
+.messageListItem__5126c:has(+ .messageListItem__5126c .message__5126c.mentioned__5126c:not(.groupStart__5126c))
+.message__5126c.mentioned__5126c::before {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.messageListItem__5126c:has(.message__5126c.mentioned__5126c) +
+.messageListItem__5126c .message__5126c.mentioned__5126c:not(.groupStart__5126c)::before {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
 }
 
 .replying__5126c {
@@ -1332,8 +1377,8 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 }
 
 
-
 /* ---------------------------- Onboarding ---------------------------- */
+
 .scroller__7d20c {
     background-color: var(--surface) !important;
     border-radius: 25px !important;
@@ -1382,7 +1427,6 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 .numberBadge__2b1f5 {
     background-color: var(--love) !important;
 }
-
 
 
 /* ---------------------------- Settings ---------------------------- */
@@ -1495,6 +1539,11 @@ button[aria-label="Disable Game Activity"] .lottieIcon__5eb9b svg path {
 
 .answerPill__971b5 .text-sm\/semibold_cf4812 {
     color: var(--foam) !important;
+}
+
+/* No pinned messages icon */
+.image_e8b59c {
+    /* filter: hue-rotate(220deg) saturate(0.8) brightness(0.9); */
 }
 
 
@@ -2122,13 +2171,6 @@ Credits:
         border-radius: var(--radius-md);
     }
 
-    .themedBackground__74017
-
-    /* chat bar inner */
-        {
-        background: none;
-    }
-
     .slateTextArea_ec4baf
 
     /* actual typing area */
@@ -2140,18 +2182,11 @@ Credits:
     .divider__908e2 {
         border-width: var(--divider-thickness);
         border-radius: var(--divider-thickness);
+        border-color: transparent;
     }
 
     .endCap__908e2 {
         margin-top: calc(var(--divider-thickness) / -2);
-    }
-
-    /* improve highlight message left edge */
-    .message__5126c.mentioned__5126c::before,
-    .replying__5126c::before,
-    .ephemeral__5126c::before {
-        width: var(--divider-thickness);
-        border-radius: var(--divider-thickness);
     }
 
     /* improve server selected marker */
